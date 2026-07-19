@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: rgb(246, 225, 193);
+    background-color: #f4f4f4;                         /* */
     display: flex;
     justify-content: center;
     align-items: center;
