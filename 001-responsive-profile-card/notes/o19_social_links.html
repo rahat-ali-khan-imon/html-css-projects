@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                                                        <!-- -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card UI Design</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="./o19_social_links.css">
+    <!-- Font AwesomeCDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="profile-card">
+        <div class="image">
+            <img src="./assets/images/profile-card-img.jpg" alt="profile-img" class="profile-img">
+        </div>
+
+        <div class="text-data">
+            <span class="name">CodingLab</span>
+            <span class="job">YouTube & Blogger</span>
+        </div>
+
+
+        <div class="media-buttons">                                         <!-- background -->
+            <a href="#" style="background: #4267b2;" class="link">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" style="background: #1da1f2;" class="link">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" style="background: #e1306c;" class="link">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" style="background: #ff0000;" class="link">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+##> Professional Approach
+সবসময় Parent → Child order follow করো।
+
+অর্থাৎ:
+    Parent Container
+    Child Element
+    Child-এর ভিতরের Element
+
+
+তাই এখানে প্রথমে
+.profile-card .media-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+##> কেন?
+কারণ আগে container কেমন হবে সেটা ঠিক করতে হবে।
+
+এখানে তুমি বলছো:
+    এটি flex container হবে।
+    এর child (.link) গুলো কীভাবে arrange হবে।
+    উপরে কত gap থাকবে।
+
+
+তারপর
+.media-buttons .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: #4070f4;
+    margin: 0 8px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+}
+
+এখন প্রতিটি button-এর style দিচ্ছ।
+
+
+
+##> Real-life Example
+
+ধরো তুমি একটা bookshelf বানাচ্ছ।
+
+প্রথমে কী করবে?
+❌ আগে বই বানাবে?
+নাকি
+✅ আগে shelf বানাবে?
+অবশ্যই আগে shelf।
+
+তারপর বইগুলো সাজাবে।
+এখানেও একই।
+
+Parent (.media-buttons)
+        ↓
+Child (.link)
+        ↓
+Icon (<i>)
+
+
+
+##> 🧠 Why?
+কারণ CSS পড়ার সময় flow HTML-এর মতোই থাকে:
+
+HTML Structure
+        ↓
+Parent
+        ↓
+Child
+        ↓
+Grand Child
+
+এতে code maintain করা, debug করা এবং revision করা অনেক সহজ হয়।
+-->
